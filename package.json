@@ -1,0 +1,14 @@
+{
+    "name": "jsbaseline",
+    "version": "0.0.1",
+    "scripts": {
+        "build": "browserify src/index.js | uglifyjs -m -c > dist/app.js && browserify src/index-deps.js | uglifyjs -m -c > dist/app-deps.js"
+    },
+    "devDependencies": {
+        "browserify": "^16.5.1",
+        "uglify-js": "^3.10.0"
+    },
+    "dependencies": {
+        
+    }
+}
