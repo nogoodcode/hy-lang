@@ -2,10 +2,11 @@
     "name": "hydra-lang",
     "version": "0.0.1",
     "scripts": {
-        "build": "browserify src/index.js | uglifyjs -m -c > lib/app.js && browserify src/index-deps.js | uglifyjs -m -c > dist/app-deps.js"
+        "build": "browserify src/index.js -p esmify | uglifyjs -m -c > lib/HydraLang.js"
     },
     "devDependencies": {
         "browserify": "^16.5.1",
+        "esmify": "^2.1.1",
         "uglify-js": "^3.10.0"
     },
     "dependencies": {}
