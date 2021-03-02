@@ -1,2 +1,2 @@
-# JSBoiler
-Boiler Plate Front End JavaScript
+# Hydra Lang
+Base utility functions for the hydra front-end library.
