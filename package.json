@@ -1,8 +1,9 @@
 {
     "name": "hydra-lang",
     "version": "0.0.1",
+    "main": "./src/index.js",
     "scripts": {
-        "build": "browserify src/index.js -p esmify | uglifyjs -m -c > lib/HydraLang.js"
+        "build": "browserify src/index.js -p esmify | uglifyjs -m -c > lib/hydra-lang-$npm_package_version.min.js"
     },
     "devDependencies": {
         "browserify": "^16.5.1",
