@@ -1,6 +1,7 @@
 'use strict'
 
-export var HydraLang = {
+export const lang = {
+
     isArray: function (arg) {
         return Object.prototype.toString.call(arg) === '[object Array]';
     },
