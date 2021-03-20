@@ -1,48 +1,72 @@
 'use strict'
 
-export const lang = {
+let ns = {};
 
-    isArray: function (arg) {
-        return Object.prototype.toString.call(arg) === '[object Array]';
-    },
+ns.isArray = function (arg) 
+{
+    return Object.prototype.toString.call(arg) 
+        === '[object Array]';
+};
 
-    getType: function (arg) {
-        if (arg == null) { 
-            return arg.toString().toLowerCase(); 
-        } 
+ns.isObject = function (arg) 
+{
+    return ns.getType(arg) === "object";
+};
 
-        var type = Object.prototype.toString.call(arg).slice(8,-1).toLowerCase();
-    
-        if (type === 'generatorfunction') { 
-            return 'function' 
-        }
+ns.getType = function (arg)
+{
+    if (arg == null) { 
+        return arg.toString().toLowerCase(); 
+    } 
 
-        if (type.match(/^(array|bigint|date|error|function|generator|regexp|symbol)$/)) {
-            return type;
-        }
+    var type = Object.prototype.toString
+        .call(arg).slice(8,-1).toLowerCase();
 
-        return (typeof arg === 'object' || typeof arg === 'function') ? 'object' : typeof arg;
+    if (type === 'generatorfunction') { 
+        return 'function' 
+    }
 
-    },
+    if (type.match(new RegExp(
+        "^(array|bigint|date|" +
+        "error|function|generator|" +
+        "regexp|symbol)$"
+    ))) {
+        return type;
+    }
 
-    serialize: function (arg) {
+    return (
+        typeof arg === 'object' || 
+        typeof arg === 'function'
+    ) ? 'object' : typeof arg;
+};
 
-    },
-
-    unserialize: function (arg) {
-
-    },
-
-    param: function (arg) {
-
-    },
-
-    unparam: function (arg) {
-
-    },
-
-    $_GET: function (arg, source) {
-
-    },
+ns.bytes = function (arg) 
+{
 
 };
+
+ns.serialize = function (arg) 
+{
+
+};
+
+ns.unserialize = function (arg) 
+{
+
+};
+
+ns.param = function param (arg) 
+{
+    var ret = "";
+    for (var p in arg) {
+
+    }
+};
+
+ns.unparam = function (arg) 
+{
+
+};
+
+
+export { ns as default }
